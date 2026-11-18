@@ -1,0 +1,1242 @@
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="royal">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إلى حبيبتي وشريكة عمري | منذ 2010 وإلى الأبد</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Amiri & Tajawal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Tajawal', 'sans-serif'],
+                        serif: ['Amiri', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* ==========================================
+           DUAL LUXURY THEME VARIABLES
+           1. Royal Velvet & Gold (data-theme="royal")
+           2. Ethereal Rose & Pearl (data-theme="pearl")
+           ========================================== */
+        :root[data-theme="royal"] {
+            --bg-gradient: radial-gradient(circle at top, #3d081b 0%, #19020a 60%, #0b0104 100%);
+            --lock-bg: rgba(15, 2, 7, 0.96);
+            --card-bg: rgba(76, 5, 25, 0.42);
+            --card-bg-solid: linear-gradient(135deg, rgba(82, 8, 30, 0.95) 0%, rgba(38, 4, 15, 0.98) 100%);
+            --card-border: rgba(251, 191, 36, 0.28);
+            --card-shadow: 0 12px 35px -5px rgba(0, 0, 0, 0.55), 0 0 25px rgba(251, 113, 133, 0.12);
+            --text-main: #fff1f2;
+            --text-muted: rgba(254, 205, 211, 0.82);
+            --accent-primary: #fbbf24;
+            --accent-secondary: #fb7185;
+            --badge-bg: rgba(251, 191, 36, 0.15);
+            --badge-text: #fde68a;
+            --counter-box-bg: rgba(45, 6, 20, 0.72);
+            --input-bg: rgba(45, 6, 20, 0.85);
+            --title-gradient: linear-gradient(to left, #fde68a, #f59e0b, #fb7185, #fde68a);
+            --btn-gradient: linear-gradient(to right, #f59e0b, #e11d48, #f59e0b);
+            --timeline-line: linear-gradient(to bottom, transparent, #fbbf24 8%, #fb7185 50%, #fbbf24 92%, transparent);
+            --poetry-bg: linear-gradient(135deg, rgba(76, 5, 25, 0.72) 0%, rgba(35, 4, 15, 0.92) 100%);
+        }
+
+        :root[data-theme="pearl"] {
+            --bg-gradient: radial-gradient(circle at top, #fff5f7 0%, #ffe4e9 55%, #fce7f3 100%);
+            --lock-bg: rgba(255, 245, 247, 0.96);
+            --card-bg: rgba(255, 255, 255, 0.78);
+            --card-bg-solid: linear-gradient(135deg, #ffffff 0%, #fff0f3 100%);
+            --card-border: rgba(225, 29, 72, 0.22);
+            --card-shadow: 0 15px 35px -5px rgba(190, 18, 60, 0.10), 0 0 25px rgba(244, 63, 94, 0.08);
+            --text-main: #4c0519;
+            --text-muted: #881337;
+            --accent-primary: #be123c;
+            --accent-secondary: #d97706;
+            --badge-bg: rgba(225, 29, 72, 0.10);
+            --badge-text: #9f1239;
+            --counter-box-bg: rgba(255, 255, 255, 0.90);
+            --input-bg: rgba(255, 255, 255, 0.95);
+            --title-gradient: linear-gradient(to left, #881337, #e11d48, #d97706, #881337);
+            --btn-gradient: linear-gradient(to right, #be123c, #e11d48, #d97706);
+            --timeline-line: linear-gradient(to bottom, transparent, #e11d48 8%, #f59e0b 50%, #e11d48 92%, transparent);
+            --poetry-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 228, 233, 0.92) 100%);
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            transition: background 0.7s ease, color 0.5s ease;
+        }
+
+        /* Theme Adaptive Classes */
+        .theme-lock-bg {
+            background: var(--lock-bg);
+        }
+
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--card-border);
+            box-shadow: var(--card-shadow);
+            transition: all 0.4s ease;
+        }
+
+        .glass-card-solid {
+            background: var(--card-bg-solid);
+            border: 2px solid var(--accent-primary);
+            box-shadow: var(--card-shadow);
+        }
+
+        .poetry-frame {
+            background: var(--poetry-bg);
+            border: 2px solid var(--card-border);
+            box-shadow: var(--card-shadow);
+        }
+
+        .theme-text-main {
+            color: var(--text-main);
+        }
+
+        .theme-text-muted {
+            color: var(--text-muted);
+        }
+
+        .theme-accent {
+            color: var(--accent-primary);
+        }
+
+        .theme-accent-sec {
+            color: var(--accent-secondary);
+        }
+
+        .theme-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            border: 1px solid var(--card-border);
+        }
+
+        .theme-counter-box {
+            background: var(--counter-box-bg);
+            border: 1px solid var(--card-border);
+        }
+
+        .theme-input {
+            background: var(--input-bg);
+            color: var(--accent-primary);
+            border: 2px solid var(--card-border);
+        }
+        .theme-input:focus {
+            border-color: var(--accent-primary);
+            outline: none;
+        }
+
+        .gold-gradient-text {
+            background: var(--title-gradient);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 6s linear infinite;
+        }
+
+        .theme-btn {
+            background-image: var(--btn-gradient);
+            background-size: 200% auto;
+            color: #ffffff;
+            transition: 0.5s;
+        }
+        .theme-btn:hover {
+            background-position: right center;
+        }
+
+        .timeline-line {
+            background: var(--timeline-line);
+        }
+
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        /* Heartbeat Animation */
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            15% { transform: scale(1.16); }
+            30% { transform: scale(0.95); }
+            45% { transform: scale(1.10); }
+        }
+        .animate-heartbeat {
+            animation: heartbeat 2.2s infinite ease-in-out;
+        }
+
+        /* Shake Animation for Wrong Password */
+        @keyframes shakeError {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-8px); }
+            40%, 80% { transform: translateX(8px); }
+        }
+        .animate-shake {
+            animation: shakeError 0.45s ease-in-out;
+        }
+
+        /* Scroll Reveal Utility */
+        .reveal {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: all 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 3D Flip Cards for "أشياء أعشقها فيكِ" */
+        .flip-card {
+            perspective: 1000px;
+            height: 235px;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 1.5rem;
+        }
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <!-- Background Floating Hearts / Petals Canvas -->
+    <canvas id="romantic-canvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
+
+    <!-- ==========================================
+         PASSWORD PROTECTION LOCK SCREEN (NO HINTS)
+         ========================================== -->
+    <div id="welcome-overlay" class="fixed inset-0 z-50 flex flex-col items-center justify-center px-4 transition-all duration-1000 theme-lock-bg backdrop-blur-xl">
+        <!-- Theme Switcher on Lock Screen as well so you can test both designs right away -->
+        <div class="fixed top-5 left-5 z-50">
+            <button type="button" onclick="toggleVisualTheme()" class="px-4 py-2 rounded-full glass-card text-xs sm:text-sm font-bold flex items-center gap-2 cursor-pointer hover:scale-105 transition-transform">
+                <i class="fa-solid fa-palette theme-accent"></i>
+                <span id="lock-theme-label" class="theme-text-main">التصميم الثاني: الفجر الوردي</span>
+            </button>
+        </div>
+
+        <div id="lock-card" class="max-w-md w-full text-center space-y-6 p-8 sm:p-10 rounded-3xl glass-card relative overflow-hidden">
+            <!-- Lock / Heart Icon -->
+            <div class="relative inline-flex items-center justify-center w-20 h-20 rounded-full theme-badge shadow-lg animate-heartbeat">
+                <i id="lock-status-icon" class="fa-solid fa-lock text-3xl theme-accent"></i>
+                <span class="absolute -top-1 -right-1 flex h-6 w-6">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-6 w-6 bg-rose-500 items-center justify-center text-xs text-white font-bold">♥</span>
+                </span>
+            </div>
+
+            <div class="space-y-2">
+                <p class="theme-accent text-xs sm:text-sm tracking-widest uppercase font-bold">هدية خاصة لملكة قلبي</p>
+                <h1 class="text-2xl sm:text-3xl font-serif font-bold theme-text-main leading-relaxed">
+                    أدخلي كلمة السر لفتح هديتكِ
+                </h1>
+                <p class="theme-text-muted text-sm leading-relaxed">
+                    وراء هذا القفل حكاية عمر وذكريات صُنعت بكل حب من أجلكِ وحدكِ
+                </p>
+            </div>
+
+            <!-- Password Input Form (No Hints Shown) -->
+            <form id="password-form" class="space-y-4">
+                <div class="relative">
+                    <input 
+                        type="text" 
+                        id="password-input" 
+                        placeholder="أدخلي كلمة السر هنا..." 
+                        autocomplete="off"
+                        dir="ltr"
+                        class="w-full py-3.5 px-5 rounded-2xl theme-input text-center text-lg font-sans font-bold tracking-widest shadow-inner transition-all"
+                    >
+                </div>
+
+                <!-- Error feedback message (No hint revealed) -->
+                <p id="password-feedback" class="hidden text-xs font-medium text-rose-500 bg-rose-500/10 py-2 px-3 rounded-xl border border-rose-500/30">
+                    كلمة السر غير صحيحة يا حبيبتي.. حاولي مرة أخرى ♥
+                </p>
+
+                <button type="submit" id="open-gift-btn" class="w-full py-4 px-8 rounded-2xl theme-btn font-bold text-lg shadow-xl flex items-center justify-center gap-3 group cursor-pointer">
+                    <span>افتحي هديتكِ يا حبيبتي</span>
+                    <i class="fa-solid fa-heart group-hover:scale-125 transition-transform"></i>
+                </button>
+            </form>
+
+            <div class="pt-2 text-xs theme-text-muted flex items-center justify-center gap-1.5 opacity-80">
+                <i class="fa-solid fa-music theme-accent"></i>
+                <span>ارفعي صوت الهاتف للاستمتاع بالموسيقى</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Bottom Controls (Audio, Heart Burst & Instant Design Switcher) -->
+    <div id="floating-controls" class="fixed bottom-5 inset-x-4 z-40 flex flex-wrap items-center justify-between gap-2 max-w-5xl mx-auto opacity-0 pointer-events-none transition-opacity duration-700">
+        <div class="flex items-center gap-2.5">
+            <button id="music-toggle-btn" title="تشغيل / إيقاف الموسيقى" class="w-12 h-12 rounded-full glass-card flex items-center justify-center theme-accent hover:scale-105 transition-all shadow-lg cursor-pointer">
+                <i id="music-icon" class="fa-solid fa-volume-high text-lg"></i>
+            </button>
+            <button id="burst-hearts-btn" title="أمطري الشاشة بالحب" class="px-4 h-12 rounded-full glass-card flex items-center gap-2 theme-text-main hover:scale-105 transition-all shadow-lg text-xs sm:text-sm font-bold cursor-pointer">
+                <i class="fa-solid fa-wand-magic-sparkles theme-accent"></i>
+                <span>نبضة حب</span>
+            </button>
+        </div>
+
+        <!-- Design Switcher Pill (Choose between Royal Dark & Pearl Rose Light) -->
+        <button id="theme-switch-btn" onclick="toggleVisualTheme()" class="px-4 h-12 rounded-full glass-card flex items-center gap-2 theme-text-main hover:scale-105 transition-all shadow-lg text-xs sm:text-sm font-bold cursor-pointer">
+            <i class="fa-solid fa-palette theme-accent"></i>
+            <span id="active-theme-label">تبديل التصميم: الفجر الوردي</span>
+        </button>
+    </div>
+
+    <!-- Main Content Container -->
+    <main id="main-content" class="relative z-10 pt-6 pb-28">
+
+        <!-- HERO SECTION -->
+        <section class="min-h-screen flex flex-col items-center justify-center px-4 py-14 text-center relative">
+            <div class="max-w-3xl mx-auto space-y-6">
+                <!-- Date Badge -->
+                <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full theme-badge text-sm sm:text-base font-bold mb-2 shadow-sm">
+                    <i class="fa-solid fa-wand-magic-sparkles theme-accent"></i>
+                    <span>شرارة 2010 • عهد 19.11.2012 • وإلى الأبد</span>
+                    <i class="fa-solid fa-heart text-rose-500 animate-pulse"></i>
+                </div>
+
+                <!-- Main Poetic Title -->
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-serif font-bold leading-tight gold-gradient-text py-2">
+                    أحببتكِ بصمت، وعشقتكِ بصدق، وسأبقى لكِ العمر كله
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="text-lg sm:text-2xl theme-text-muted max-w-2xl mx-auto font-normal leading-relaxed">
+                    من أول نظرة خطفت قلبي في عام <span class="theme-accent font-bold font-sans">2010</span>، وأول اعتراف بحبي لكِ في <span class="theme-accent font-bold font-sans">19.11.2012</span>، إلى مملكتنا الدافئة التي تزهر بضحكات <span class="theme-accent font-bold">أمير</span> و<span class="theme-accent font-bold">أميرة</span>.
+                </p>
+
+                <!-- Decorative Divider -->
+                <div class="flex items-center justify-center gap-4 py-4">
+                    <span class="h-[1px] w-16 sm:w-28 bg-current opacity-30"></span>
+                    <i class="fa-solid fa-crown theme-accent text-xl"></i>
+                    <span class="h-[1px] w-16 sm:w-28 bg-current opacity-30"></span>
+                </div>
+
+                <!-- Scroll Down Indicator -->
+                <div class="pt-4">
+                    <a href="#poem-section" class="inline-flex flex-col items-center gap-2 theme-text-muted hover:opacity-100 transition-opacity text-sm font-medium">
+                        <span>اقرئي أول أبيات شعر أهديتها لكِ</span>
+                        <div class="w-8 h-12 rounded-full border-2 border-current opacity-50 flex items-start justify-center p-1.5">
+                            <div class="w-1.5 h-3 bg-current rounded-full animate-bounce"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FIRST POEM SECTION (أول بيت شعر قلته لكِ) -->
+        <section id="poem-section" class="py-12 px-4 max-w-4xl mx-auto reveal">
+            <div class="poetry-frame rounded-3xl p-8 sm:p-14 text-center relative overflow-hidden">
+                <!-- Decorative Corner Elements -->
+                <div class="absolute top-5 right-5 theme-accent opacity-30 text-2xl"><i class="fa-solid fa-feather-pointed"></i></div>
+                <div class="absolute top-5 left-5 theme-accent opacity-30 text-2xl"><i class="fa-solid fa-heart"></i></div>
+
+                <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full theme-badge text-xs sm:text-sm font-bold mb-6">
+                    <i class="fa-solid fa-scroll theme-accent"></i>
+                    <span>أول أبيات شعر قلتها لكِ يوم 19.11.2012</span>
+                </span>
+
+                <div class="space-y-5 my-4 font-serif text-2xl sm:text-4xl md:text-5xl theme-text-main leading-relaxed tracking-wide">
+                    <p class="gold-gradient-text font-bold py-1">
+                        " أُحِبُّكِ جِدّاً.. وَجِدّاً وَجِدّاً
+                    </p>
+                    <p>
+                        وَأَرْفُضُ مِنْ نَارِ حُبِّكِ أَنْ أَسْتَقِيلا
+                    </p>
+                    <p class="theme-accent font-bold">
+                        وَهَلْ يَسْتَطِيعُ المُتَيَّمُ بِالحُبِّ أَنْ يَسْتَقِيلا؟
+                    </p>
+                    <p>
+                        وَمَا هَمَّنِي إِنْ خَرَجْتُ مِنَ الحُبِّ حَيّاً
+                    </p>
+                    <p class="gold-gradient-text font-bold py-1">
+                        وَمَا هَمَّنِي إِنْ خَرَجْتُ قَتِيلا "
+                    </p>
+                </div>
+
+                <div class="mt-8 flex items-center justify-center gap-3 theme-text-muted text-sm sm:text-base">
+                    <span class="h-[1px] w-10 bg-current opacity-30"></span>
+                    <span>كلماتٌ نطق بها قلبي يومها.. وما زالت تزداد صدقاً كل يوم</span>
+                    <span class="h-[1px] w-10 bg-current opacity-30"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- LIVE COUNTER SECTION (Since 19.11.2012) -->
+        <section id="counter-section" class="py-16 px-4 max-w-5xl mx-auto reveal">
+            <div class="glass-card rounded-3xl p-6 sm:p-12 text-center relative overflow-hidden">
+                <span class="theme-accent text-sm font-bold tracking-wider uppercase">عداد الحُب الأبدي</span>
+                <h2 class="text-2xl sm:text-4xl font-serif font-bold theme-text-main mt-2 mb-3">
+                    منذ لحظة البوح الأولى في 19.11.2012
+                </h2>
+                <p class="theme-text-muted text-sm sm:text-base mb-10 max-w-xl mx-auto">
+                    كل ثانية تمر منذ ذلك اليوم تزيدني يقيناً أنكِ أجمل أقداري وأعظم نعم الله عليّ.
+                </p>
+
+                <!-- 6 Grid Units for Time -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-5">
+                    <div class="p-4 sm:p-5 rounded-2xl theme-counter-box flex flex-col items-center justify-center">
+                        <span id="years-val" class="text-3xl sm:text-5xl font-extrabold theme-accent font-sans">0</span>
+                        <span class="text-xs sm:text-sm theme-text-muted mt-2 font-medium">سنة من الحب</span>
+                    </div>
+                    <div class="p-4 sm:p-5 rounded-2xl theme-counter-box flex flex-col items-center justify-center">
+                        <span id="months-val" class="text-3xl sm:text-5xl font-extrabold theme-accent font-sans">0</span>
+                        <span class="text-xs sm:text-sm theme-text-muted mt-2 font-medium">شهر من المودة</span>
+                    </div>
+                    <div class="p-4 sm:p-5 rounded-2xl theme-counter-box flex flex-col items-center justify-center">
+                        <span id="days-val" class="text-3xl sm:text-5xl font-extrabold theme-accent font-sans">0</span>
+                        <span class="text-xs sm:text-sm theme-text-muted mt-2 font-medium">يوم من السعادة</span>
+                    </div>
+                    <div class="p-4 sm:p-5 rounded-2xl theme-counter-box flex flex-col items-center justify-center">
+                        <span id="hours-val" class="text-3xl sm:text-5xl font-extrabold theme-accent-sec font-sans">0</span>
+                        <span class="text-xs sm:text-sm theme-text-muted mt-2 font-medium">ساعة</span>
+                    </div>
+                    <div class="p-4 sm:p-5 rounded-2xl theme-counter-box flex flex-col items-center justify-center">
+                        <span id="minutes-val" class="text-3xl sm:text-5xl font-extrabold theme-accent-sec font-sans">0</span>
+                        <span class="text-xs sm:text-sm theme-text-muted mt-2 font-medium">دقيقة</span>
+                    </div>
+                    <div class="p-4 sm:p-5 rounded-2xl theme-counter-box flex flex-col items-center justify-center">
+                        <span id="seconds-val" class="text-3xl sm:text-5xl font-extrabold theme-accent font-sans">0</span>
+                        <span class="text-xs sm:text-sm theme-text-muted mt-2 font-medium">ثانية تنبض بكِ</span>
+                    </div>
+                </div>
+
+                <!-- Total Days Pill -->
+                <div class="mt-8 inline-flex items-center gap-2 px-5 py-2.5 rounded-full theme-badge text-sm sm:text-base font-medium">
+                    <i class="fa-solid fa-infinity theme-accent"></i>
+                    <span>إجمالي الأيام منذ عهدنا الأول: <strong id="total-days-val" class="theme-accent font-bold">0</strong> يوماً من العشق</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             COMPLETE 6-MILESTONE STORY TIMELINE SECTION
+             ========================================== -->
+        <section class="py-16 px-4 max-w-5xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <span class="theme-accent text-sm font-bold tracking-wider uppercase">محطاتنا الخالدة</span>
+                <h2 class="text-3xl sm:text-5xl font-serif font-bold theme-text-main mt-2">شريط ذكرياتنا الجميلة</h2>
+                <p class="theme-text-muted mt-3 max-w-xl mx-auto">ست محطات تاريخية حُفرت في القلب، منذ الشرارة الأولى عام 2010 وحتى اكتمال عائلتنا</p>
+            </div>
+
+            <div class="relative">
+                <!-- Vertical Center Line -->
+                <div class="absolute right-6 sm:right-1/2 top-0 bottom-0 w-1 timeline-line transform sm:translate-x-1/2 rounded-full"></div>
+
+                <!-- Milestone 1: 2010 The First Spark -->
+                <div class="relative flex flex-col sm:flex-row items-start mb-14 reveal">
+                    <div class="sm:w-1/2 sm:pl-12 pr-16 sm:pr-0 text-right w-full">
+                        <div class="glass-card p-6 sm:p-8 rounded-3xl hover:-translate-y-1 transition-all duration-300">
+                            <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full theme-badge text-xs font-bold mb-3 font-sans">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                <span>2010 • الشرارة الأولى</span>
+                            </span>
+                            <h3 class="text-xl sm:text-2xl font-serif font-bold theme-text-main mb-2">
+                                بداية الحب في القلب
+                            </h3>
+                            <p class="theme-text-muted text-sm sm:text-base leading-relaxed">
+                                حين جمعنا قسم واحد في السنة الأولى ثانوي.. هناك وُلد حبكِ في قلبي بصمت، وبدأت أجمل حكاية في عمري.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="absolute right-1 sm:right-1/2 transform sm:translate-x-1/2 w-11 h-11 rounded-full theme-btn border-4 border-white/20 flex items-center justify-center shadow-lg z-10">
+                        <i class="fa-solid fa-eye text-white text-sm"></i>
+                    </div>
+                    <div class="sm:w-1/2"></div>
+                </div>
+
+                <!-- Milestone 2: 19.11.2012 First Confession -->
+                <div class="relative flex flex-col sm:flex-row-reverse items-start mb-14 reveal">
+                    <div class="sm:w-1/2 sm:pr-12 pr-16 text-right w-full">
+                        <div class="glass-card p-6 sm:p-8 rounded-3xl hover:-translate-y-1 transition-all duration-300">
+                            <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full theme-badge text-xs font-bold mb-3 font-sans">
+                                <i class="fa-solid fa-heart"></i>
+                                <span>19.11.2012 • لحظة البوح</span>
+                            </span>
+                            <h3 class="text-xl sm:text-2xl font-serif font-bold theme-text-main mb-2">
+                                أول كلمة «أحبكِ»
+                            </h3>
+                            <p class="theme-text-muted text-sm sm:text-base leading-relaxed">
+                                في عام البكالوريا، لم يعد القلب يحتمل الكتمان أكثر.. فكانت اللحظة التي نطقتُ فيها بأصدق كلمة غيّرت مجرى حياتي للأبد.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="absolute right-1 sm:right-1/2 transform sm:translate-x-1/2 w-11 h-11 rounded-full theme-btn border-4 border-white/20 flex items-center justify-center shadow-lg z-10">
+                        <i class="fa-solid fa-heart text-white text-sm"></i>
+                    </div>
+                    <div class="sm:w-1/2"></div>
+                </div>
+
+                <!-- Milestone 3: 02.01.2020 Engagement -->
+                <div class="relative flex flex-col sm:flex-row items-start mb-14 reveal">
+                    <div class="sm:w-1/2 sm:pl-12 pr-16 sm:pr-0 text-right w-full">
+                        <div class="glass-card p-6 sm:p-8 rounded-3xl hover:-translate-y-1 transition-all duration-300">
+                            <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full theme-badge text-xs font-bold mb-3 font-sans">
+                                <i class="fa-solid fa-gem"></i>
+                                <span>02.01.2020 • الخطوبة</span>
+                            </span>
+                            <h3 class="text-xl sm:text-2xl font-serif font-bold theme-text-main mb-2">
+                                يوم خطوبتنا المباركة
+                            </h3>
+                            <p class="theme-text-muted text-sm sm:text-base leading-relaxed">
+                                اليوم الذي تحوّل فيه الوعد إلى عهد رسمي، واقترب الحلم خطوة نحو الكمال بعد سنوات من الوفاء والحب الصادق.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="absolute right-1 sm:right-1/2 transform sm:translate-x-1/2 w-11 h-11 rounded-full theme-btn border-4 border-white/20 flex items-center justify-center shadow-lg z-10">
+                        <i class="fa-solid fa-ring text-white text-sm"></i>
+                    </div>
+                    <div class="sm:w-1/2"></div>
+                </div>
+
+                <!-- Milestone 4: 29.07.2021 Wedding -->
+                <div class="relative flex flex-col sm:flex-row-reverse items-start mb-14 reveal">
+                    <div class="sm:w-1/2 sm:pr-12 pr-16 text-right w-full">
+                        <div class="glass-card p-6 sm:p-8 rounded-3xl hover:-translate-y-1 transition-all duration-300">
+                            <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full theme-badge text-xs font-bold mb-3 font-sans">
+                                <i class="fa-solid fa-crown"></i>
+                                <span>29.07.2021 • ليلة العمر والزواج</span>
+                            </span>
+                            <h3 class="text-xl sm:text-2xl font-serif font-bold theme-text-main mb-2">
+                                اجتماعنا تحت سقف واحد
+                            </h3>
+                            <p class="theme-text-muted text-sm sm:text-base leading-relaxed">
+                                تتويج صبرنا وحبنا الطويل، يوم زُفّت إليّ أجمل عروس في الدنيا، وبدأنا رحلة حياتنا الزوجية المباركة يداً بيد.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="absolute right-1 sm:right-1/2 transform sm:translate-x-1/2 w-11 h-11 rounded-full theme-btn border-4 border-white/20 flex items-center justify-center shadow-lg z-10">
+                        <i class="fa-solid fa-champagne-glasses text-white text-sm"></i>
+                    </div>
+                    <div class="sm:w-1/2"></div>
+                </div>
+
+                <!-- Milestone 5: 16.05.2022 Birth of Amir -->
+                <div class="relative flex flex-col sm:flex-row items-start mb-14 reveal">
+                    <div class="sm:w-1/2 sm:pl-12 pr-16 sm:pr-0 text-right w-full">
+                        <div class="glass-card p-6 sm:p-8 rounded-3xl hover:-translate-y-1 transition-all duration-300">
+                            <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full theme-badge text-xs font-bold mb-3 font-sans">
+                                <i class="fa-solid fa-star"></i>
+                                <span>16.05.2022 • قدوم أمير</span>
+                            </span>
+                            <h3 class="text-xl sm:text-2xl font-serif font-bold theme-text-main mb-2">
+                                ولادة أميرنا الغالي «أمير»
+                            </h3>
+                            <p class="theme-text-muted text-sm sm:text-base leading-relaxed">
+                                نورٌ جديد أضاء بيتنا بولادة بكرنا الغالي «أمير»، ورأيتُ في عينيكِ أجمل وأحنّ أم في الوجود.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="absolute right-1 sm:right-1/2 transform sm:translate-x-1/2 w-11 h-11 rounded-full theme-btn border-4 border-white/20 flex items-center justify-center shadow-lg z-10">
+                        <i class="fa-solid fa-baby text-white text-sm"></i>
+                    </div>
+                    <div class="sm:w-1/2"></div>
+                </div>
+
+                <!-- Milestone 6: 22.02.2026 Birth of Amira -->
+                <div class="relative flex flex-col sm:flex-row-reverse items-start reveal">
+                    <div class="sm:w-1/2 sm:pr-12 pr-16 text-right w-full">
+                        <div class="glass-card p-6 sm:p-8 rounded-3xl hover:-translate-y-1 transition-all duration-300">
+                            <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full theme-badge text-xs font-bold mb-3 font-sans">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                <span>22.02.2026 • قدوم أميرة</span>
+                            </span>
+                            <h3 class="text-xl sm:text-2xl font-serif font-bold theme-text-main mb-2">
+                                ولادة أميرتنا الحلوة «أميرة»
+                            </h3>
+                            <p class="theme-text-muted text-sm sm:text-base leading-relaxed">
+                                اكتملت فرحتنا وزاد بيتنا بهجة بقدوم صغيرتنا المدللة «أميرة»، لتكون زهرة البيت التي تشبهكِ في رقتكِ وجمالكِ.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="absolute right-1 sm:right-1/2 transform sm:translate-x-1/2 w-11 h-11 rounded-full theme-btn border-4 border-white/20 flex items-center justify-center shadow-lg z-10">
+                        <i class="fa-solid fa-children text-white text-sm"></i>
+                    </div>
+                    <div class="sm:w-1/2"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             INTERACTIVE SECTION: "أشياء أعشقها فيكِ" (6 FLIP CARDS)
+             ========================================== -->
+        <section class="py-16 px-4 max-w-5xl mx-auto reveal">
+            <div class="text-center mb-12">
+                <span class="theme-accent text-sm font-bold tracking-wider uppercase">تفاصيلكِ التي تسحرني</span>
+                <h2 class="text-3xl sm:text-5xl font-serif font-bold theme-text-main mt-2">أشياء أعشقها فيكِ</h2>
+                <p class="theme-text-muted mt-2 text-sm sm:text-base">اضغطي على كل بطاقة لتكتشفي ما يخبئه قلبي لكِ</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Flip Card 1: رقتكِ -->
+                <div class="flip-card cursor-pointer group" onclick="this.classList.toggle('flipped'); burstExtraHearts();">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front glass-card p-6 flex flex-col items-center justify-center">
+                            <div class="w-14 h-14 rounded-2xl theme-badge flex items-center justify-center mb-4 text-2xl shadow-sm">
+                                <i class="fa-solid fa-feather"></i>
+                            </div>
+                            <h3 class="text-2xl font-serif font-bold theme-text-main mb-2">١. رقتكِ</h3>
+                            <span class="text-xs theme-accent flex items-center gap-1.5 mt-2 font-medium">
+                                <i class="fa-solid fa-hand-pointer animate-bounce"></i>
+                                <span>اضغطي لفتح البطاقة</span>
+                            </span>
+                        </div>
+                        <div class="flip-card-back glass-card-solid p-6 flex flex-col items-center justify-center">
+                            <i class="fa-solid fa-heart theme-accent text-xl mb-3"></i>
+                            <h4 class="text-lg font-serif font-bold theme-accent mb-2">رقتكِ التي لا مثيل لها</h4>
+                            <p class="theme-text-main text-sm sm:text-base leading-relaxed">
+                                "نعومتكِ ورقة طبعكِ التي تلمس قلبي في كل كلمة وتجعل كل تفصيلة معكِ هادئة وجميلة."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flip Card 2: حنانكِ -->
+                <div class="flip-card cursor-pointer group" onclick="this.classList.toggle('flipped'); burstExtraHearts();">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front glass-card p-6 flex flex-col items-center justify-center">
+                            <div class="w-14 h-14 rounded-2xl theme-badge flex items-center justify-center mb-4 text-2xl shadow-sm">
+                                <i class="fa-solid fa-hand-holding-heart"></i>
+                            </div>
+                            <h3 class="text-2xl font-serif font-bold theme-text-main mb-2">٢. حنانكِ</h3>
+                            <span class="text-xs theme-accent flex items-center gap-1.5 mt-2 font-medium">
+                                <i class="fa-solid fa-hand-pointer animate-bounce"></i>
+                                <span>اضغطي لفتح البطاقة</span>
+                            </span>
+                        </div>
+                        <div class="flip-card-back glass-card-solid p-6 flex flex-col items-center justify-center">
+                            <i class="fa-solid fa-heart theme-accent text-xl mb-3"></i>
+                            <h4 class="text-lg font-serif font-bold theme-accent mb-2">أحنّ قلب في الدنيا</h4>
+                            <p class="theme-text-main text-sm sm:text-base leading-relaxed">
+                                "قلبكِ الكبير الذي يغمرني أنا وأمير وأميرة بدفء وحنان يجعل بيتنا أماناً وسكينة."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flip Card 3: مسؤوليتكِ معي ومع ابنينا -->
+                <div class="flip-card cursor-pointer group" onclick="this.classList.toggle('flipped'); burstExtraHearts();">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front glass-card p-6 flex flex-col items-center justify-center">
+                            <div class="w-14 h-14 rounded-2xl theme-badge flex items-center justify-center mb-4 text-2xl shadow-sm">
+                                <i class="fa-solid fa-shield-heart"></i>
+                            </div>
+                            <h3 class="text-2xl font-serif font-bold theme-text-main mb-2">٣. مسؤوليتكِ معنا</h3>
+                            <span class="text-xs theme-accent flex items-center gap-1.5 mt-2 font-medium">
+                                <i class="fa-solid fa-hand-pointer animate-bounce"></i>
+                                <span>اضغطي لفتح البطاقة</span>
+                            </span>
+                        </div>
+                        <div class="flip-card-back glass-card-solid p-6 flex flex-col items-center justify-center">
+                            <i class="fa-solid fa-crown theme-accent text-xl mb-3"></i>
+                            <h4 class="text-lg font-serif font-bold theme-accent mb-2">سندي وعمود بيتنا</h4>
+                            <p class="theme-text-main text-sm sm:text-base leading-relaxed">
+                                "مسؤوليتكِ العظيمة معي ومع ابنينا أمير وأميرة، ووقوفكِ بجانبي في كل صغيرة وكبيرة."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flip Card 4: ابتسامتكِ وعيونكِ -->
+                <div class="flip-card cursor-pointer group" onclick="this.classList.toggle('flipped'); burstExtraHearts();">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front glass-card p-6 flex flex-col items-center justify-center">
+                            <div class="w-14 h-14 rounded-2xl theme-badge flex items-center justify-center mb-4 text-2xl shadow-sm">
+                                <i class="fa-solid fa-sun"></i>
+                            </div>
+                            <h3 class="text-2xl font-serif font-bold theme-text-main mb-2">٤. ابتسامتكِ وروحكِ</h3>
+                            <span class="text-xs theme-accent flex items-center gap-1.5 mt-2 font-medium">
+                                <i class="fa-solid fa-hand-pointer animate-bounce"></i>
+                                <span>اضغطي لفتح البطاقة</span>
+                            </span>
+                        </div>
+                        <div class="flip-card-back glass-card-solid p-6 flex flex-col items-center justify-center">
+                            <i class="fa-solid fa-face-smile-beam theme-accent text-xl mb-3"></i>
+                            <h4 class="text-lg font-serif font-bold theme-accent mb-2">راحتي بعد كل تعب</h4>
+                            <p class="theme-text-main text-sm sm:text-base leading-relaxed">
+                                "ضحكتكِ الصافية ونظرتكِ التي ما زالت تخطف قلبي تماماً كما فعلت أول مرة في عام 2010."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flip Card 5: صبركِ ووفاؤكِ -->
+                <div class="flip-card cursor-pointer group" onclick="this.classList.toggle('flipped'); burstExtraHearts();">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front glass-card p-6 flex flex-col items-center justify-center">
+                            <div class="w-14 h-14 rounded-2xl theme-badge flex items-center justify-center mb-4 text-2xl shadow-sm">
+                                <i class="fa-solid fa-gem"></i>
+                            </div>
+                            <h3 class="text-2xl font-serif font-bold theme-text-main mb-2">٥. صبركِ ووفاؤكِ</h3>
+                            <span class="text-xs theme-accent flex items-center gap-1.5 mt-2 font-medium">
+                                <i class="fa-solid fa-hand-pointer animate-bounce"></i>
+                                <span>اضغطي لفتح البطاقة</span>
+                            </span>
+                        </div>
+                        <div class="flip-card-back glass-card-solid p-6 flex flex-col items-center justify-center">
+                            <i class="fa-solid fa-infinity theme-accent text-xl mb-3"></i>
+                            <h4 class="text-lg font-serif font-bold theme-accent mb-2">شريكة العمر الوفيّة</h4>
+                            <p class="theme-text-main text-sm sm:text-base leading-relaxed">
+                                "رحلة عمر طويلة أثبتِّ فيها أنكِ نعم الحبيبة والزوجة والسند في كل الظروف."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flip Card 6: الملوخية التي تطبخها! 😋 -->
+                <div class="flip-card cursor-pointer group" onclick="this.classList.toggle('flipped'); burstExtraHearts();">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front glass-card p-6 flex flex-col items-center justify-center relative overflow-hidden">
+                            <span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full theme-badge text-[11px] font-bold">
+                                سر خطير 😋
+                            </span>
+                            <div class="w-14 h-14 rounded-2xl theme-badge flex items-center justify-center mb-4 text-2xl shadow-sm">
+                                <i class="fa-solid fa-utensils"></i>
+                            </div>
+                            <h3 class="text-2xl font-serif font-bold theme-accent mb-2">٦. والسر السادس..!</h3>
+                            <span class="text-xs theme-text-muted flex items-center gap-1.5 mt-2 font-medium">
+                                <i class="fa-solid fa-hand-pointer animate-bounce theme-accent"></i>
+                                <span>اضغطي لمعرفة السر اللذيذ</span>
+                            </span>
+                        </div>
+                        <div class="flip-card-back glass-card-solid p-6 flex flex-col items-center justify-center">
+                            <div class="text-2xl mb-1">🍲😋❤️</div>
+                            <h4 class="text-xl font-serif font-bold theme-accent mb-2">الملوخية التي تطبخينها!</h4>
+                            <p class="theme-text-main text-sm sm:text-base leading-relaxed">
+                                "لا يمكن أن تكتمل القائمة دون الاعتراف بأن الملوخية من يديكِ هي ألذ وأطيب ما تذوقته في حياتي! تسلم يداكِ يا حبيبتي."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OUR ROYAL FAMILY CARDS (أركان مملكتنا: الزوجة، أمير، أميرة) -->
+        <section class="py-14 px-4 max-w-5xl mx-auto reveal">
+            <div class="text-center mb-12">
+                <span class="theme-accent text-sm font-bold tracking-wider uppercase">مملكتنا الدافئة</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold theme-text-main mt-2">ملكة قلبي وأميري وأميرتي</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Queen Card -->
+                <div class="glass-card rounded-3xl p-7 text-center hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-16 h-16 mx-auto mb-5 rounded-2xl theme-badge flex items-center justify-center shadow-sm">
+                        <i class="fa-solid fa-crown text-2xl theme-accent"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold theme-accent mb-2">زوجتي وحبيبتي</h3>
+                    <p class="theme-text-muted text-sm leading-relaxed">
+                        حبيبة العمر منذ عام 2010، أنتِ الروح التي تسكنني، والقلب الذي يجمعنا بالحب والحنان كل يوم.
+                    </p>
+                </div>
+
+                <!-- Prince Amir Card -->
+                <div class="glass-card rounded-3xl p-7 text-center hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-16 h-16 mx-auto mb-5 rounded-2xl theme-badge flex items-center justify-center shadow-sm">
+                        <i class="fa-solid fa-shield-heart text-2xl theme-accent"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold theme-text-main mb-1">أميرنا الغالي (أمير)</h3>
+                    <span class="inline-block text-xs theme-accent font-bold font-sans mb-2">16.05.2022</span>
+                    <p class="theme-text-muted text-sm leading-relaxed">
+                        سندنا وفرحة قلوبنا الأولى، يحمل في عينيه براءة الحب الذي جمعنا، ويكبر ليكون فخراً لنا.
+                    </p>
+                </div>
+
+                <!-- Princess Amira Card -->
+                <div class="glass-card rounded-3xl p-7 text-center hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-16 h-16 mx-auto mb-5 rounded-2xl theme-badge flex items-center justify-center shadow-sm">
+                        <i class="fa-solid fa-wand-sparkles text-2xl theme-accent"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold theme-text-main mb-1">أميرتنا الحلوة (أميرة)</h3>
+                    <span class="inline-block text-xs theme-accent font-bold font-sans mb-2">22.02.2026</span>
+                    <p class="theme-text-muted text-sm leading-relaxed">
+                        بهجة البيت ورقته، تشبهكِ في حنانكِ وجمال روحكِ، وتملأ أيامنا بالورود والابتسامات.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ROMANTIC LETTER SECTION (رسالة من القلب) -->
+        <section class="py-16 px-4 max-w-3xl mx-auto reveal">
+            <div class="glass-card rounded-3xl p-8 sm:p-12 relative shadow-2xl">
+                <!-- Decorative Quote Icon -->
+                <div class="absolute -top-6 right-8 w-12 h-12 rounded-full theme-btn flex items-center justify-center shadow-lg">
+                    <i class="fa-solid fa-feather-pointed text-white text-lg"></i>
+                </div>
+
+                <div class="flex items-center justify-between border-b border-current/15 pb-4 mb-6">
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl font-serif font-bold theme-accent">رسالة من قلبي إلى قلبكِ</h2>
+                        <p class="text-xs sm:text-sm theme-text-muted mt-1">تُكتب بحروف الشوق والامتنان</p>
+                    </div>
+                    <button id="replay-letter-btn" class="px-3.5 py-1.5 rounded-xl theme-badge text-xs font-bold flex items-center gap-1.5 transition-transform hover:scale-105 cursor-pointer">
+                        <i class="fa-solid fa-rotate-right"></i>
+                        <span>إعادة القراءة</span>
+                    </button>
+                </div>
+
+                <!-- Typewriter Letter Container -->
+                <div id="letter-content" class="font-serif text-xl sm:text-2xl leading-loose theme-text-main min-h-[260px] whitespace-pre-line"></div>
+
+                <!-- Signature -->
+                <div class="mt-8 pt-6 border-t border-current/15 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <div>
+                        <p class="theme-accent font-serif text-xl font-bold">زوجكِ ومحبكِ للأبد</p>
+                        <p class="theme-text-muted text-sm">عاشقكِ منذ 2010 • وعهدنا الخالد 19.11.2012</p>
+                    </div>
+                    <button id="send-kiss-btn" class="px-6 py-3 rounded-2xl theme-btn font-bold text-sm shadow-lg flex items-center gap-2 transition-all cursor-pointer">
+                        <span>اضغطي هنا إن ابتسمتِ</span>
+                        <i class="fa-solid fa-heart"></i>
+                    </button>
+                </div>
+
+                <!-- Interactive Response Banner (Hidden until clicked) -->
+                <div id="smile-response" class="hidden mt-6 p-4 rounded-2xl theme-badge text-center text-sm sm:text-base font-bold">
+                    <i class="fa-solid fa-wand-magic-sparkles ml-1"></i>
+                    ابتسامتكِ هي أجمل مكافأة لي في هذه الدنيا.. أدامكِ الله لي ولأمير وأميرة! ♥
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="text-center pt-12 pb-8 px-4 theme-text-muted text-sm">
+            <div class="flex items-center justify-center gap-2 mb-2 font-medium">
+                <span>صُنع بكل حب لزوجتي الغالية</span>
+                <i class="fa-solid fa-heart text-rose-500 animate-heartbeat"></i>
+            </div>
+            <p class="font-sans text-xs opacity-75">2010 • 19.11.2012 • 02.01.2020 • 29.07.2021 • 16.05.2022 • 22.02.2026</p>
+        </footer>
+
+    </main>
+
+    <script>
+        /* ==========================================
+           0. DUAL VISUAL DESIGN SWITCHER
+              - "royal": التصميم الأول (الكلاسيكي الملكي)
+              - "pearl": التصميم الثاني (الفجر الوردي المشرق)
+              ملاحظة للزوج: إذا أردت تثبيت التصميم الثاني افتراضياً في GitHub،
+              فقط غيّر data-theme="royal" في أعلى الكود (السطر 2) إلى data-theme="pearl"
+           ========================================== */
+        function toggleVisualTheme() {
+            const root = document.documentElement;
+            const current = root.getAttribute('data-theme') || 'royal';
+            const next = current === 'royal' ? 'pearl' : 'royal';
+            root.setAttribute('data-theme', next);
+
+            const labelText = next === 'royal'
+                ? 'تبديل التصميم: الفجر الوردي'
+                : 'تبديل التصميم: الكلاسيكي الملكي';
+
+            const activeLabel = document.getElementById('active-theme-label');
+            const lockLabel = document.getElementById('lock-theme-label');
+            if (activeLabel) activeLabel.textContent = labelText;
+            if (lockLabel) lockLabel.textContent = labelText;
+
+            burstExtraHearts();
+        }
+
+        /* ==========================================
+           1. LIVE COUNTER SINCE 19.11.2012
+           ========================================== */
+        const startDate = new Date(2012, 10, 19, 0, 0, 0); // 19 November 2012
+
+        function updateLoveCounter() {
+            const now = new Date();
+            
+            let years = now.getFullYear() - startDate.getFullYear();
+            let months = now.getMonth() - startDate.getMonth();
+            let days = now.getDate() - startDate.getDate();
+            let hours = now.getHours() - startDate.getHours();
+            let minutes = now.getMinutes() - startDate.getMinutes();
+            let seconds = now.getSeconds() - startDate.getSeconds();
+
+            if (seconds < 0) {
+                seconds += 60;
+                minutes--;
+            }
+            if (minutes < 0) {
+                minutes += 60;
+                hours--;
+            }
+            if (hours < 0) {
+                hours += 24;
+                days--;
+            }
+            if (days < 0) {
+                const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+                days += prevMonth.getDate();
+                months--;
+            }
+            if (months < 0) {
+                months += 12;
+                years--;
+            }
+
+            const diffTime = Math.abs(now - startDate);
+            const totalDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+            document.getElementById('years-val').textContent = years;
+            document.getElementById('months-val').textContent = months;
+            document.getElementById('days-val').textContent = days;
+            document.getElementById('hours-val').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes-val').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds-val').textContent = String(seconds).padStart(2, '0');
+            document.getElementById('total-days-val').textContent = totalDays.toLocaleString('ar-EG');
+        }
+
+        setInterval(updateLoveCounter, 1000);
+        updateLoveCounter();
+
+        /* ==========================================
+           2. SYNTHESIZED ROMANTIC PIANO (ZERO EXTERNAL FILES)
+           ========================================== */
+        let audioCtx = null;
+        let isMusicPlaying = false;
+        let melodyInterval = null;
+        let noteStep = 0;
+
+        const romanticNotes = [
+            { freq: 174.61, dur: 2.2 }, { freq: 261.63, dur: 1.8 }, { freq: 329.63, dur: 1.8 }, { freq: 440.00, dur: 2.4 },
+            { freq: 196.00, dur: 2.2 }, { freq: 293.66, dur: 1.8 }, { freq: 392.00, dur: 1.8 }, { freq: 493.88, dur: 2.4 },
+            { freq: 164.81, dur: 2.2 }, { freq: 246.94, dur: 1.8 }, { freq: 329.63, dur: 1.8 }, { freq: 392.00, dur: 2.4 },
+            { freq: 220.00, dur: 2.2 }, { freq: 329.63, dur: 1.8 }, { freq: 440.00, dur: 1.8 }, { freq: 523.25, dur: 2.8 }
+        ];
+
+        function playPianoNote(freq, duration) {
+            if (!audioCtx || !isMusicPlaying) return;
+
+            const now = audioCtx.currentTime;
+            const osc1 = audioCtx.createOscillator();
+            const osc2 = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+
+            osc1.type = 'sine';
+            osc1.frequency.setValueAtTime(freq, now);
+
+            osc2.type = 'triangle';
+            osc2.frequency.setValueAtTime(freq * 2, now);
+
+            const overtoneGain = audioCtx.createGain();
+            overtoneGain.gain.setValueAtTime(0.03, now);
+
+            gainNode.gain.setValueAtTime(0.001, now);
+            gainNode.gain.linearRampToValueAtTime(0.11, now + 0.08);
+            gainNode.gain.exponentialRampToValueAtTime(0.0008, now + duration);
+
+            osc1.connect(gainNode);
+            osc2.connect(overtoneGain);
+            overtoneGain.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+
+            osc1.start(now);
+            osc2.start(now);
+            osc1.stop(now + duration);
+            osc2.stop(now + duration);
+        }
+
+        function startRomanticMusic() {
+            isMusicPlaying = true;
+            updateMusicIcon();
+
+            try {
+                if (!audioCtx) {
+                    const AudioContext = window.AudioContext || window.webkitAudioContext;
+                    audioCtx = new AudioContext();
+                }
+                if (audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
+
+                const firstNote = romanticNotes[noteStep % romanticNotes.length];
+                playPianoNote(firstNote.freq, firstNote.dur);
+                noteStep++;
+
+                if (melodyInterval) clearInterval(melodyInterval);
+                melodyInterval = setInterval(() => {
+                    if (isMusicPlaying) {
+                        const note = romanticNotes[noteStep % romanticNotes.length];
+                        playPianoNote(note.freq, note.dur);
+                        noteStep++;
+                    }
+                }, 850);
+            } catch (e) {
+                console.warn('Web Audio API could not start automatically:', e);
+            }
+        }
+
+        function toggleMusic() {
+            if (!isMusicPlaying) {
+                startRomanticMusic();
+            } else {
+                isMusicPlaying = false;
+                updateMusicIcon();
+            }
+        }
+
+        function updateMusicIcon() {
+            const icon = document.getElementById('music-icon');
+            if (isMusicPlaying) {
+                icon.className = 'fa-solid fa-volume-high text-lg';
+            } else {
+                icon.className = 'fa-solid fa-volume-xmark text-lg opacity-60';
+            }
+        }
+
+        /* ==========================================
+           3. ROMANTIC LETTER TYPEWRITER EFFECT
+           ========================================== */
+        const romanticLetterText = `زوجتي الغالية وحبيبة عمري..
+منذ أن خفق قلبي بحبكِ لأول مرة عام 2010، وحتى اللحظة التي باح فيها لساني بكلمة "أحبكِ" في 19.11.2012 وأنا أردد لكِ:
+"أحبكِ جداً وجداً وجداً.. وأرفض من نار حبكِ أن أستقيلا"
+
+كبر حبنا وتوجناه بالخطوبة في 02.01.2020، ثم بليلة عمرنا وزواجنا في 29.07.2021، وأكرمني الله بكِ أماً حنونةً لأميرنا الغالي "أمير" في 16.05.2022، وأميرتنا الحلوة "أميرة" في 22.02.2026.
+
+أعشق رقتكِ، وحنانكِ، ومسؤوليتكِ العظيمة معي ومع طفلينا.. وحتى نَفَسكِ الساحر في طبخ الملوخية التي لا مثيل لها في الدنيا!
+حفظكِ الله لي قلباً وروحاً وعائلتنا الجميلة للأبد.`;
+
+        let typingTimer = null;
+        let charIndex = 0;
+
+        function startTypewriter() {
+            const container = document.getElementById('letter-content');
+            if (typingTimer) clearInterval(typingTimer);
+            container.textContent = '';
+            charIndex = 0;
+
+            typingTimer = setInterval(() => {
+                if (charIndex < romanticLetterText.length) {
+                    container.textContent += romanticLetterText.charAt(charIndex);
+                    charIndex++;
+                } else {
+                    clearInterval(typingTimer);
+                }
+            }, 35);
+        }
+
+        /* ==========================================
+           4. PASSWORD LOCK SCREEN VALIDATION (ACCEPTS ALL 19.11.2012 & 19.11.12 FORMATS)
+           ========================================== */
+        function normalizeDigits(str) {
+            return str.replace(/[٠-٩]/g, d => '٠١٢٣٤٥٦٧٨٩'.indexOf(d)).trim();
+        }
+
+        function isPasswordValid(rawInput) {
+            const normalized = normalizeDigits(rawInput);
+            // Strip any dots, slashes, dashes, spaces
+            const digitsOnly = normalized.replace(/[^0-9]/g, '');
+            const validDigitForms = [
+                '19112012', // 19112012, 19.11.2012, 19/11/2012, 19-11-2012
+                '191112',   // 191112, 19.11.12, 19/11/12, 19-11-12
+                '20121119', // 2012/11/19, 2012.11.19
+                '121119'    // 12/11/19, 12.11.19
+            ];
+            return validDigitForms.includes(digitsOnly);
+        }
+
+        function unlockGift() {
+            const welcomeOverlay = document.getElementById('welcome-overlay');
+            const floatingControls = document.getElementById('floating-controls');
+            const lockIcon = document.getElementById('lock-status-icon');
+
+            if (lockIcon) {
+                lockIcon.className = 'fa-solid fa-lock-open text-3xl theme-accent';
+            }
+
+            startRomanticMusic();
+            burstExtraHearts();
+
+            setTimeout(() => {
+                welcomeOverlay.classList.add('opacity-0', 'pointer-events-none');
+                floatingControls.classList.remove('opacity-0', 'pointer-events-none');
+                setTimeout(() => {
+                    startTypewriter();
+                }, 800);
+            }, 300);
+        }
+
+        /* ==========================================
+           5. FLOATING HEARTS / ROSE PETALS CANVAS
+           ========================================== */
+        const canvas = document.getElementById('romantic-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class RomanticParticle {
+            constructor(isBurst = false) {
+                this.reset(isBurst);
+            }
+
+            reset(isBurst = false) {
+                this.x = isBurst ? (window.innerWidth / 2 + (Math.random() - 0.5) * 260) : Math.random() * canvas.width;
+                this.y = isBurst ? (window.innerHeight - 90) : (canvas.height + Math.random() * 100);
+                this.size = Math.random() * 15 + 9;
+                this.speedY = isBurst ? (Math.random() * 3.5 + 2) : (Math.random() * 1.1 + 0.4);
+                this.speedX = (Math.random() - 0.5) * (isBurst ? 3 : 0.8);
+                this.opacity = Math.random() * 0.55 + 0.25;
+                this.type = Math.random();
+            }
+
+            update() {
+                this.y -= this.speedY;
+                this.x += this.speedX;
+                if (this.y < -30) {
+                    this.reset(false);
+                }
+            }
+
+            draw() {
+                const theme = document.documentElement.getAttribute('data-theme') || 'royal';
+                ctx.save();
+                ctx.globalAlpha = this.opacity;
+                if (theme === 'pearl') {
+                    ctx.fillStyle = this.type > 0.45 ? '#e11d48' : '#d97706';
+                    ctx.font = `${this.size}px serif`;
+                    ctx.fillText(this.type > 0.35 ? '❀' : '♥', this.x, this.y);
+                } else {
+                    ctx.fillStyle = this.type > 0.45 ? '#fb7185' : '#fbbf24';
+                    ctx.font = `${this.size}px serif`;
+                    ctx.fillText(this.type > 0.35 ? '♥' : '✦', this.x, this.y);
+                }
+                ctx.restore();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            for (let i = 0; i < 38; i++) {
+                const p = new RomanticParticle(false);
+                p.y = Math.random() * canvas.height;
+                particles.push(p);
+            }
+        }
+
+        function burstExtraHearts() {
+            for (let i = 0; i < 18; i++) {
+                particles.push(new RomanticParticle(true));
+            }
+            if (particles.length > 95) {
+                particles.splice(0, 18);
+            }
+        }
+
+        function animateCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animateCanvas);
+        }
+
+        /* ==========================================
+           6. SCROLL REVEAL & INTERACTIVITY INIT
+           ========================================== */
+        function handleScrollReveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            const triggerBottom = window.innerHeight * 0.88;
+
+            reveals.forEach(el => {
+                const boxTop = el.getBoundingClientRect().top;
+                if (boxTop < triggerBottom) {
+                    el.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleScrollReveal);
+
+        window.onload = function () {
+            initParticles();
+            animateCanvas();
+            handleScrollReveal();
+
+            const passwordForm = document.getElementById('password-form');
+            const passwordInput = document.getElementById('password-input');
+            const passwordFeedback = document.getElementById('password-feedback');
+            const lockCard = document.getElementById('lock-card');
+
+            passwordForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const val = passwordInput.value;
+                if (isPasswordValid(val)) {
+                    passwordFeedback.classList.add('hidden');
+                    unlockGift();
+                } else {
+                    passwordFeedback.classList.remove('hidden');
+                    lockCard.classList.remove('animate-shake');
+                    void lockCard.offsetWidth;
+                    lockCard.classList.add('animate-shake');
+                }
+            });
+
+            document.getElementById('music-toggle-btn').addEventListener('click', toggleMusic);
+            
+            document.getElementById('burst-hearts-btn').addEventListener('click', () => {
+                burstExtraHearts();
+            });
+
+            document.getElementById('replay-letter-btn').addEventListener('click', () => {
+                startTypewriter();
+            });
+
+            document.getElementById('send-kiss-btn').addEventListener('click', () => {
+                burstExtraHearts();
+                const responseBanner = document.getElementById('smile-response');
+                responseBanner.classList.remove('hidden');
+            });
+        };
+    </script>
+</body>
+</html>
+```
